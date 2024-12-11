@@ -6,16 +6,15 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
 function CodeSnippet({ position }: { position: [number, number, number] }) {
-  const snippets = [
-    "npm install future",
-    "git commit -m 'Success'",
-    "kubectl get pods",
-    "docker build .",
-  ];
-  const text = useMemo(
-    () => snippets[Math.floor(Math.random() * snippets.length)],
-    [snippets]
-  );
+  const text = useMemo(() => {
+    const snippets = [
+      "npm install future",
+      "git commit -m 'Success'",
+      "kubectl get pods",
+      "docker build .",
+    ];
+    return snippets[Math.floor(Math.random() * snippets.length)];
+  }, []);
   return (
     <Float speed={0.5} rotationIntensity={0.5} floatIntensity={0.5}>
       <Text

@@ -9,7 +9,7 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   try {
-    const response = await fetch(`http://localhost:3001/api/blogs/${params.slug}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${params.slug}`)
     if (!response.ok) {
       return {}
     }
@@ -40,7 +40,7 @@ export async function generateMetadata({
 
 async function getBlogPost(slug: string) {
   try {
-    const response = await fetch(`http://localhost:3001/api/blogs/${slug}`)
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${slug}`)
     if (!response.ok) {
       return null
     }

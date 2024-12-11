@@ -5,7 +5,8 @@ const nextConfig = {
       'localhost',
       'plus.unsplash.com',
       'images.unsplash.com',
-      'unsplash.com'
+      'unsplash.com',
+      'media.licdn.com'
     ],
   },
 }

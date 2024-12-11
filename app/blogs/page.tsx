@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -37,17 +37,17 @@ export default function BlogsPage() {
   const [isLoading, setIsLoading] = useState(true)
 
   // Fetch blog posts
-  const fetchBlogPosts = async () => {
+  const fetchBlogPosts = useCallback(async () => {
     try {
       setIsLoading(true);
       const params = new URLSearchParams({
         page: currentPage.toString(),
         limit: '6',
         ...(selectedTag && { tag: selectedTag }),
-        ...(searchTerm && { search: searchTerm })
-      });
+        ...(searchTerm && { search: searchTerm }),
+      }).toString();
 
-      const response = await fetch(`http://localhost:3001/api/blogs?${params}`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs?${params}`);
       const data = await response.json();
       setBlogData(data);
     } catch (error) {
@@ -55,12 +55,12 @@ export default function BlogsPage() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [currentPage, selectedTag, searchTerm]);
 
   // Fetch all tags
-  const fetchTags = async () => {
+  const fetchTags = useCallback(async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/blogs/tags');
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/tags`);
       if (!response.ok) {
         throw new Error('Failed to fetch tags');
       }
@@ -70,17 +70,17 @@ export default function BlogsPage() {
       console.error('Error fetching tags:', error);
       setAllTags([]); // Set empty array on error
     }
-  };
+  }, []);
 
   // Fetch data when component mounts and when filters change
   useEffect(() => {
     fetchBlogPosts();
-  }, [currentPage, selectedTag, searchTerm]);
+  }, [fetchBlogPosts]);
 
   // Fetch tags when component mounts
   useEffect(() => {
     fetchTags();
-  }, []);
+  }, [fetchTags]);
 
   return (
     <>
