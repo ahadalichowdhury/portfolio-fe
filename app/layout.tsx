@@ -3,16 +3,13 @@ import Sidebar from "@/components/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
-import type { Metadata } from "next";
+import { defaultMetadata } from "./metadata";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Developer Portfolio",
-  description: "Welcome to my professional developer portfolio",
-};
+export const metadata = defaultMetadata;
 
 export default function RootLayout({
   children,

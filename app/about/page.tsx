@@ -1,5 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Facebook, Github, Linkedin, Mail, X } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description: "Learn about my journey as a software engineer, my expertise in backend development, and my experience with scalable software architecture and CI/CD pipelines.",
+  openGraph: {
+    title: "About Me | Developer Portfolio",
+    description: "Learn about my journey as a software engineer, my expertise in backend development, and my experience with scalable software architecture and CI/CD pipelines.",
+  },
+  twitter: {
+    title: "About Me | Developer Portfolio",
+    description: "Learn about my journey as a software engineer, my expertise in backend development, and my experience with scalable software architecture and CI/CD pipelines.",
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -35,15 +49,33 @@ export default function AboutPage() {
 
       {/* Social Links - First Row */}
       <div className="flex flex-wrap justify-center gap-4 mb-4">
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+              bg-white dark:bg-green-400 
+              text-green-400 dark:text-black 
+              hover:bg-black dark:hover:bg-black 
+              hover:text-green-400 dark:hover:text-green-400 
+              hover:border-green-500 
+              transition-all duration-300">
           <Facebook className="mr-2 h-4 w-4" />
           Facebook
         </Button>
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+              bg-white dark:bg-green-400 
+              text-green-400 dark:text-black 
+              hover:bg-black dark:hover:bg-black 
+              hover:text-green-400 dark:hover:text-green-400 
+              hover:border-green-500 
+              transition-all duration-300">
           <Github className="mr-2 h-4 w-4" />
           Github
         </Button>
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+              bg-white dark:bg-green-400 
+              text-green-400 dark:text-black 
+              hover:bg-black dark:hover:bg-black 
+              hover:text-green-400 dark:hover:text-green-400 
+              hover:border-green-500 
+              transition-all duration-300">
           <Linkedin className="mr-2 h-4 w-4" />
           LinkedIn
         </Button>
@@ -51,11 +83,23 @@ export default function AboutPage() {
 
       {/* Social Links - Second Row */}
       <div className="flex flex-wrap justify-center gap-4">
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+              bg-white dark:bg-green-400 
+              text-green-400 dark:text-black 
+              hover:bg-black dark:hover:bg-black 
+              hover:text-green-400 dark:hover:text-green-400 
+              hover:border-green-500 
+              transition-all duration-300">
           <X className="mr-2 h-4 w-4" />
           Twitter
         </Button>
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+              bg-white dark:bg-green-400 
+              text-green-400 dark:text-black 
+              hover:bg-black dark:hover:bg-black 
+              hover:text-green-400 dark:hover:text-green-400 
+              hover:border-green-500 
+              transition-all duration-300">
           <Mail className="mr-2 h-4 w-4" />
           Gmail
         </Button>
