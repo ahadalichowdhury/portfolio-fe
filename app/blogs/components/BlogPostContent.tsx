@@ -12,6 +12,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import { BlogPosting } from "schema-dts";
+import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 
 interface BlogPost {
   _id: string;
@@ -62,10 +63,10 @@ const MarkdownComponents: Components = {
       <div className="relative">
         <SyntaxHighlighter
           language={language}
-          style={dracula}
+          style={dracula as any}
           PreTag="div"
           className="rounded-lg !bg-gray-900 !p-4"
-          {...props}
+          {...(props as SyntaxHighlighterProps)}
         >
           {String(children).replace(/\n$/, "")}
         </SyntaxHighlighter>
