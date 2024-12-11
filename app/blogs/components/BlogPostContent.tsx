@@ -12,7 +12,6 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import { BlogPosting } from "schema-dts";
-import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
 
 interface BlogPost {
   _id: string;
