@@ -24,15 +24,6 @@ interface BlogPost {
   author?: string;
 }
 
-// Custom type for the syntax highlighter style
-type PrismStyleType = {
-  [key: string]: {
-    color?: string;
-    backgroundColor?: string;
-    [key: string]: string | undefined;
-  };
-};
-
 // Copy button component
 const CopyButton = ({ text }: { text: string }) => {
   const [copied, setCopied] = useState(false);
@@ -72,10 +63,10 @@ const MarkdownComponents: Components = {
       <div className="relative">
         <SyntaxHighlighter
           language={language}
-          style={dracula as PrismStyleType}
+          style={dracula}
           PreTag="div"
           className="rounded-lg !bg-gray-900 !p-4"
-          {...(props as SyntaxHighlighterProps)}
+          {...props}
         >
           {String(children).replace(/\n$/, "")}
         </SyntaxHighlighter>
