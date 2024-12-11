@@ -10,7 +10,6 @@ import ReactMarkdown, { Components } from "react-markdown";
 import { JsonLd } from "react-schemaorg";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
-import type { StylesType } from 'react-syntax-highlighter/dist/esm/types';
 import remarkGfm from "remark-gfm";
 import { BlogPosting } from "schema-dts";
 import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
@@ -24,6 +23,15 @@ interface BlogPost {
   date: string;
   author?: string;
 }
+
+// Custom type for the syntax highlighter style
+type PrismStyleType = {
+  [key: string]: {
+    color?: string;
+    backgroundColor?: string;
+    [key: string]: string | undefined;
+  };
+};
 
 // Copy button component
 const CopyButton = ({ text }: { text: string }) => {
@@ -64,7 +72,7 @@ const MarkdownComponents: Components = {
       <div className="relative">
         <SyntaxHighlighter
           language={language}
-          style={dracula as StylesType}
+          style={dracula as PrismStyleType}
           PreTag="div"
           className="rounded-lg !bg-gray-900 !p-4"
           {...(props as SyntaxHighlighterProps)}
