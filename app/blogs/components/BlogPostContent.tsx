@@ -9,9 +9,24 @@ import { useState } from "react";
 import ReactMarkdown, { Components } from "react-markdown";
 import { JsonLd } from "react-schemaorg";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+// import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
+import { nord } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
 import { BlogPosting } from "schema-dts";
+import { ReactNode } from "react";
+
+interface CodeProps {
+  inline?: boolean;
+  className?: string;
+  children: ReactNode;
+}
+
+interface CodeBlockProps {
+  language?: string;
+  children: ReactNode;
+  className?: string;
+  [key: string]: unknown;
+}
 
 interface BlogPost {
   _id: string;
@@ -22,6 +37,12 @@ interface BlogPost {
   date: string;
   author?: string;
 }
+
+// type StyleObjectType = {
+//   [key: string]: CSSProperties;
+// };
+
+// const codeStyle: StyleObjectType = nord;
 
 // Copy button component
 const CopyButton = ({ text }: { text: string }) => {
@@ -52,25 +73,43 @@ const CopyButton = ({ text }: { text: string }) => {
   );
 };
 
+const CodeBlock = ({ language, children, ...props }: CodeBlockProps) => {
+  const content = children ? String(children).replace(/\n$/, "") : "";
+  
+  return (
+    <div className="relative">
+      <SyntaxHighlighter
+        {...props}
+        language={language}
+        style={nord}
+        PreTag="div"
+        customStyle={{
+          backgroundColor: 'rgb(17 24 39)',
+          padding: '1rem',
+          borderRadius: '0.5rem',
+          margin: 0
+        }}
+      >
+        {content}
+      </SyntaxHighlighter>
+      <CopyButton text={content} />
+    </div>
+  );
+};
+
 // Custom components for markdown rendering
 const MarkdownComponents: Components = {
-  code({ className, children, ...props }) {
+  code: ({ inline, className, children, ...props }: CodeProps) => {
     const match = /language-(\w+)/.exec(className || "");
     const language = match ? match[1] : "";
-
-    return (
-      <div className="relative">
-        <SyntaxHighlighter
-          language={language}
-          style={dracula}
-          PreTag="div"
-          className="rounded-lg !bg-gray-900 !p-4"
-          {...props}
-        >
-          {String(children).replace(/\n$/, "")}
-        </SyntaxHighlighter>
-        <CopyButton text={String(children)} />
-      </div>
+    return !inline ? (
+      <CodeBlock language={language} {...props}>
+        {children}
+      </CodeBlock>
+    ) : (
+      <code className={className} {...props}>
+        {children}
+      </code>
     );
   },
   img({ src, alt }) {
