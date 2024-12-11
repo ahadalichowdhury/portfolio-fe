@@ -85,10 +85,30 @@ body {
 }
 
 @layer base {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #__next {
+    height: 100%;
+  }
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Ensure canvas takes full space */
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .absolute {
+    position: absolute;
+  }
+  .z-10 {
+    z-index: 10;
   }
 }

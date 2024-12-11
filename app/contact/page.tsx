@@ -21,7 +21,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center text-green-400 p-4">
+    <div className="w-2/4 min-h-screen flex flex-col justify-center items-center text-green-400 p-4">
       <div className="w-full max-w-full">
         <h1 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">
           Contact Me

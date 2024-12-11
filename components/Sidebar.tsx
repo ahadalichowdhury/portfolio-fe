@@ -19,7 +19,6 @@ const menuItems = [
   { icon: User, label: "About Me", href: "/about" },
   { icon: Briefcase, label: "Projects", href: "/portfolio" },
   { icon: BookOpen, label: "Blogs", href: "/blogs" },
-  { icon: Mail, label: "Contact", href: "/contact" },
 ]
 
 export default function AppSidebar() {
@@ -35,12 +34,12 @@ export default function AppSidebar() {
         <Menu />
       </SidebarTrigger>
       <Sidebar 
-        className={`w-64 bg-gray-800/50 backdrop-blur-md border-r border-green-500/20 transition-all duration-300 ease-in-out ${
+        className={`w-64 bg-slate-700/90 dark:bg-gray-800/50 backdrop-blur-md border-r border-green-500/20 transition-all duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0`}
       >
         <SidebarHeader className="border-b border-green-500/20 p-4">
-          <h2 className="text-2xl font-bold text-center text-green-400">Dev Portfolio</h2>
+          <h2 className="text-2xl font-bold text-center text-green-400 dark:text-green-400">Dev Portfolio</h2>
         </SidebarHeader>
         <SidebarContent className="flex flex-col justify-center h-full py-4">
           <SidebarMenu>
@@ -64,4 +63,3 @@ export default function AppSidebar() {
     </>
   )
 }
-

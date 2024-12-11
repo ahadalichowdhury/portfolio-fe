@@ -1,30 +1,65 @@
+import { Button } from "@/components/ui/button";
+import { Facebook, Github, Linkedin, Mail, X } from "lucide-react";
+
 export default function AboutPage() {
   return (
-    <div className="flex flex-col justify-center min-h-screen max-w-3xl mx-auto text-green-400 p-4">
-      <h1 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in">About Me</h1>
-      <div className="space-y-4 animate-fade-in animation-delay-200">
-        <p>
-          Hello! I'm a passionate web developer with expertise in React, Next.js,
-          Three.js, and modern web technologies. I love creating intuitive, performant,
-          and visually stunning user interfaces that solve real-world problems.
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
+      {/* Profile Image */}
+      <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-green-500 mb-8 overflow-hidden">
+        <img
+          src="https://media.licdn.com/dms/image/v2/D5603AQG3WTuIOAOozA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729247894434?e=2147483647&v=beta&t=2nru4vrUATBvf3E3Mt_4pPMLBARVLbwrgFy8gnWkz0U"
+          alt="Profile"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* About Text */}
+      <div className="max-w-2xl text-center mb-8">
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in text-green-400">
+          About Me
+        </h1>
+        <p className="text-lg mb-6 animate-fade-in animation-delay-200 text-green-400">
+          I am a software engineer, focused on backend development. I design a
+          lot of software which is scalable, maintainable, and I create CI/CD
+          pipelines to increase productivity.
         </p>
-        <p>
-          With several years of experience in the industry, I've worked on a variety
-          of projects ranging from small business websites to large-scale enterprise
-          applications. I'm always eager to learn new technologies and push the
-          boundaries of what's possible on the web.
-        </p>
-        <p>
-          My specialty lies in creating immersive 3D experiences on the web,
-          blending cutting-edge technology with artistic design to craft memorable
-          user experiences.
-        </p>
-        <p>
-          When I'm not coding, you can find me exploring new VR technologies,
-          contributing to open-source projects, or experimenting with generative art.
-        </p>
+        <div className="space-y-4 animate-fade-in animation-delay-200">
+          <p className="text-green-400">
+            With several years of experience in the industry, I&#39;ve worked on a
+            variety of projects ranging from small business websites to
+            large-scale enterprise applications. I&#39;m always eager to learn new
+            technologies and push the boundaries of what&#39;s possible on the web.
+          </p>
+        </div>
+      </div>
+
+      {/* Social Links - First Row */}
+      <div className="flex flex-wrap justify-center gap-4 mb-4">
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+          <Facebook className="mr-2 h-4 w-4" />
+          Facebook
+        </Button>
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+          <Github className="mr-2 h-4 w-4" />
+          Github
+        </Button>
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+          <Linkedin className="mr-2 h-4 w-4" />
+          LinkedIn
+        </Button>
+      </div>
+
+      {/* Social Links - Second Row */}
+      <div className="flex flex-wrap justify-center gap-4">
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+          <X className="mr-2 h-4 w-4" />
+          Twitter
+        </Button>
+        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 text-green-400 dark:text-green-400 bg-green-400 hover:bg-black hover:text-white hover:border-green-500 transition-all duration-300">
+          <Mail className="mr-2 h-4 w-4" />
+          Gmail
+        </Button>
       </div>
     </div>
-  )
+  );
 }
-
