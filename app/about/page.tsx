@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Facebook, Github, Linkedin, Mail, X } from "lucide-react";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Me",
@@ -20,9 +21,11 @@ export default function AboutPage() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-8">
       {/* Profile Image */}
       <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-green-500 mb-8 overflow-hidden">
-        <img
+        <Image
           src="https://media.licdn.com/dms/image/v2/D5603AQG3WTuIOAOozA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1729247894434?e=2147483647&v=beta&t=2nru4vrUATBvf3E3Mt_4pPMLBARVLbwrgFy8gnWkz0U"
           alt="Profile"
+          width={200}
+          height={200}
           className="w-full h-full object-cover"
         />
       </div>
