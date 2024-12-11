@@ -14,7 +14,7 @@ function CodeSnippet({ position }: { position: [number, number, number] }) {
   ];
   const text = useMemo(
     () => snippets[Math.floor(Math.random() * snippets.length)],
-    []
+    [snippets]
   );
   return (
     <Float speed={0.5} rotationIntensity={0.5} floatIntensity={0.5}>

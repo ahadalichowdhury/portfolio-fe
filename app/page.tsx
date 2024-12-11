@@ -9,8 +9,8 @@ export default function Home() {
           Welcome to My Dev Universe
         </h1>
         <p className="text-lg md:text-xl mb-8 animate-fade-in animation-delay-200">
-          I'm a passionate developer crafting digital solutions and bringing
-          ideas to life through code. Explore my projects and let's build the
+          I&apos;m a passionate developer crafting digital solutions and bringing
+          ideas to life through code. Let&apos;s build the
           future of technology together!
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-400">
