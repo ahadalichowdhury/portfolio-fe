@@ -6,7 +6,7 @@ import { Check, Copy } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { Components } from "react-markdown";
 import { JsonLd } from "react-schemaorg";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -53,8 +53,8 @@ const CopyButton = ({ text }: { text: string }) => {
 };
 
 // Custom components for markdown rendering
-const MarkdownComponents = {
-  code({ className, children, ...props }: { className?: string; children: React.ReactNode }) {
+const MarkdownComponents: Components = {
+  code({ className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || "");
     const language = match ? match[1] : "";
 
@@ -73,7 +73,7 @@ const MarkdownComponents = {
       </div>
     );
   },
-  img({ src, alt }: { src?: string; alt?: string }) {
+  img({ src, alt }) {
     return (
       <div className="relative w-full h-64 my-4">
         <Image
@@ -85,56 +85,56 @@ const MarkdownComponents = {
       </div>
     );
   },
-  p({ children }: { children: React.ReactNode }) {
+  p({ children }) {
     return (
       <p className="mb-4 leading-relaxed text-green-400">
         {children}
       </p>
     );
   },
-  h1({ children }: { children: React.ReactNode }) {
+  h1({ children }) {
     return (
       <h1 className="text-3xl font-bold mb-4 text-green-400">
         {children}
       </h1>
     );
   },
-  h2({ children }: { children: React.ReactNode }) {
+  h2({ children }) {
     return (
       <h2 className="text-2xl font-semibold mb-3 text-green-400">
         {children}
       </h2>
     );
   },
-  h3({ children }: { children: React.ReactNode }) {
+  h3({ children }) {
     return (
       <h3 className="text-xl font-medium mb-2 text-green-400">
         {children}
       </h3>
     );
   },
-  ul({ children }: { children: React.ReactNode }) {
+  ul({ children }) {
     return (
       <ul className="list-disc list-inside mb-4 text-green-400">
         {children}
       </ul>
     );
   },
-  ol({ children }: { children: React.ReactNode }) {
+  ol({ children }) {
     return (
       <ol className="list-decimal list-inside mb-4 text-green-400">
         {children}
       </ol>
     );
   },
-  blockquote({ children }: { children: React.ReactNode }) {
+  blockquote({ children }) {
     return (
       <blockquote className="border-l-4 border-green-600 pl-4 italic my-4 text-green-400">
         {children}
       </blockquote>
     );
   },
-};
+} as Components;
 
 export default function BlogPostContent({ post }: { post: BlogPost }) {
   const router = useRouter();
