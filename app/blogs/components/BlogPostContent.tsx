@@ -177,7 +177,7 @@ const MarkdownComponents: Components = {
 
 export default function BlogPostContent({ post }: { post: BlogPost }) {
   const router = useRouter();
-  const blogUrl = `https://yourdomain.com/blogs/${post._id}`;
+  const blogUrl = `${process.env.NEXT_PUBLIC_API_URL}/blogs/${post._id}`;
 
   return (
     <>

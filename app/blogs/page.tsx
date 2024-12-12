@@ -154,7 +154,7 @@ export default function BlogsPage() {
                       <span className="text-sm opacity-75">
                         {new Date(post.date).toLocaleDateString()}
                       </span>
-                      <Link href={`/blogs/${post._id}`} className="text-green-400 hover:text-green-300 underline">
+                      <Link href={`${process.env.NEXT_PUBLIC_API_URL}/blogs/${post._id}`} className="text-green-400 hover:text-green-300 underline">
                         Read more
                       </Link>
                     </div>
