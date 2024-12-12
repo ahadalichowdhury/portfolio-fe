@@ -52,60 +52,70 @@ export default function AboutPage() {
 
       {/* Social Links - First Row */}
       <div className="flex flex-wrap justify-center gap-4 mb-4">
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
-              bg-white dark:bg-green-400 
-              text-green-400 dark:text-black 
-              hover:bg-black dark:hover:bg-black 
-              hover:text-green-400 dark:hover:text-green-400 
-              hover:border-green-500 
-              transition-all duration-300">
-          <Facebook className="mr-2 h-4 w-4" />
-          Facebook
-        </Button>
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
-              bg-white dark:bg-green-400 
-              text-green-400 dark:text-black 
-              hover:bg-black dark:hover:bg-black 
-              hover:text-green-400 dark:hover:text-green-400 
-              hover:border-green-500 
-              transition-all duration-300">
-          <Github className="mr-2 h-4 w-4" />
-          Github
-        </Button>
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
-              bg-white dark:bg-green-400 
-              text-green-400 dark:text-black 
-              hover:bg-black dark:hover:bg-black 
-              hover:text-green-400 dark:hover:text-green-400 
-              hover:border-green-500 
-              transition-all duration-300">
-          <Linkedin className="mr-2 h-4 w-4" />
-          LinkedIn
-        </Button>
+        <a href="https://www.facebook.com/smahadalichowdhury1" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+                bg-white dark:bg-green-400 
+                text-green-400 dark:text-black 
+                hover:bg-black dark:hover:bg-black 
+                hover:text-green-400 dark:hover:text-green-400 
+                hover:border-green-500 
+                transition-all duration-300">
+            <Facebook className="mr-2 h-4 w-4" />
+            Facebook
+          </Button>
+        </a>
+        <a href="https://github.com/ahadalichowdhury" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+                bg-white dark:bg-green-400 
+                text-green-400 dark:text-black 
+                hover:bg-black dark:hover:bg-black 
+                hover:text-green-400 dark:hover:text-green-400 
+                hover:border-green-500 
+                transition-all duration-300">
+            <Github className="mr-2 h-4 w-4" />
+            Github
+          </Button>
+        </a>
+        <a href="https://www.linkedin.com/in/ahadchowdhury" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+                bg-white dark:bg-green-400 
+                text-green-400 dark:text-black 
+                hover:bg-black dark:hover:bg-black 
+                hover:text-green-400 dark:hover:text-green-400 
+                hover:border-green-500 
+                transition-all duration-300">
+            <Linkedin className="mr-2 h-4 w-4" />
+            LinkedIn
+          </Button>
+        </a>
       </div>
 
       {/* Social Links - Second Row */}
       <div className="flex flex-wrap justify-center gap-4">
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
-              bg-white dark:bg-green-400 
-              text-green-400 dark:text-black 
-              hover:bg-black dark:hover:bg-black 
-              hover:text-green-400 dark:hover:text-green-400 
-              hover:border-green-500 
-              transition-all duration-300">
-          <X className="mr-2 h-4 w-4" />
-          Twitter
-        </Button>
-        <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
-              bg-white dark:bg-green-400 
-              text-green-400 dark:text-black 
-              hover:bg-black dark:hover:bg-black 
-              hover:text-green-400 dark:hover:text-green-400 
-              hover:border-green-500 
-              transition-all duration-300">
-          <Mail className="mr-2 h-4 w-4" />
-          Gmail
-        </Button>
+        <a href="https://x.com/homo_ant" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+                bg-white dark:bg-green-400 
+                text-green-400 dark:text-black 
+                hover:bg-black dark:hover:bg-black 
+                hover:text-green-400 dark:hover:text-green-400 
+                hover:border-green-500 
+                transition-all duration-300">
+            <X className="mr-2 h-4 w-4" />
+            Twitter
+          </Button>
+        </a>
+        <a href="mailto:smahadalichowdhury@gmail.com" target="_blank" rel="noopener noreferrer">
+          <Button variant="outline" size="lg" className="min-w-[140px] border-green-500 
+                bg-white dark:bg-green-400 
+                text-green-400 dark:text-black 
+                hover:bg-black dark:hover:bg-black 
+                hover:text-green-400 dark:hover:text-green-400 
+                hover:border-green-500 
+                transition-all duration-300">
+            <Mail className="mr-2 h-4 w-4" />
+            Gmail
+          </Button>
+        </a>
       </div>
     </div>
   );
